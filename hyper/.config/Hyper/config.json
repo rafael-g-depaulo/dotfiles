@@ -1,0 +1,14 @@
+{
+	"windowPosition": [
+		72,
+		27
+	],
+	"windowSize": [
+		1848,
+		1053
+	],
+	"hyper": {
+		"plugins": "{\"plugins\":[\"hyper-highlight-active-pane\",\"hyper-pane\",\"hyper-font-ligatures\",\"hyperborder-elevated\",\"hyper-tabs-autohide\",\"hyperterm-cursor\",\"hyper-dracula\"],\"localPlugins\":[]}",
+		"plugin-versions": "[[\"hyper-highlight-active-pane\",\"0.1.0\"],[\"hyper-pane\",\"2.1.5\"],[\"hyper-font-ligatures\",\"0.0.8\"],[\"hyperborder-elevated\",\"1.0.0\"],[\"hyper-tabs-autohide\",\"0.1.2\"],[\"hyperterm-cursor\",\"0.0.3\"],[\"hyper-dracula\",\"0.2.1\"]]"
+	}
+}
