@@ -93,6 +93,9 @@ plugins=(
   npm
   yarn
   aws
+  
+  #! PRETTY ####################################################
+  zsh-syntax-highlighting
 )
 
 # User configuration
