@@ -1,4 +1,4 @@
--- examples for your init.lua
+-- examples for your init.luatree
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -28,7 +28,17 @@ require("nvim-tree").setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    -- dotfiles = true,
+    custom = { "^\\.git" },
+  },
+  git = {
+    enable = true,
+    -- ignore = true,
+  },
+  actions = {
+    change_dir = {
+      restrict_above_cwd = true,
+    }
   },
 })
 
