@@ -1,11 +1,11 @@
 {
 	"windowPosition": [
 		1920,
-		0
+		27
 	],
 	"windowSize": [
 		1920,
-		1080
+		1053
 	],
 	"hyper": {
 		"plugins": "{\"plugins\":[\"hyper-highlight-active-pane\",\"hyper-pane\",\"hyper-font-ligatures\",\"hyperborder-elevated\",\"hyper-tabs-autohide\",\"hyperterm-cursor\",\"hyper-dracula\"],\"localPlugins\":[]}",
