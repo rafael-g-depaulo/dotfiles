@@ -3,3 +3,5 @@ hyper/.config/Hyper/GPUCache/
 hyper/.config/Hyper/Code Cache/
 hyper/.config/Hyper/Local Storage/
 hyper/.config/Hyper/Session Storage/
+hyper/.config/Hyper/TransportSecurity
+hyper/.config/Hyper/Network Persistent State
