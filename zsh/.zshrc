@@ -202,4 +202,5 @@ alias tree='tree -C --dirsfirst'
 alias publicip='curl ifconfig.me'
 alias du1='du -h -d 1'
 alias view='less -XF'
+alias mux='tmuxinator'
 
