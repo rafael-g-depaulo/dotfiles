@@ -1,10 +1,18 @@
 {
 	"windowPosition": [
+<<<<<<< Updated upstream
 		1920,
 		27
 	],
 	"windowSize": [
 		1920,
+=======
+		72,
+		27
+	],
+	"windowSize": [
+		1848,
+>>>>>>> Stashed changes
 		1053
 	],
 	"hyper": {
