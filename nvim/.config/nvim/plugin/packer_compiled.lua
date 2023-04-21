@@ -215,6 +215,11 @@ _G.packer_plugins = {
     path = "/home/ragan/.local/share/nvim/site/pack/packer/start/vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
   },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/ragan/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
   ["vim-devicons"] = {
     loaded = true,
     path = "/home/ragan/.local/share/nvim/site/pack/packer/start/vim-devicons",

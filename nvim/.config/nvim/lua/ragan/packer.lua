@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
+    -- comments stuff
+    use('tpope/vim-commentary')
 
     -- file navigation. made by the youtube vim guy
     use('theprimeagen/harpoon')
