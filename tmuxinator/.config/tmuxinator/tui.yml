@@ -1,7 +1,7 @@
 # /home/ragan/.config/tmuxinator/test-project.yml
 
-name: test-project
-root: ~/
+name: tui
+root: ~/projects/load-tui/
 
 # Optional tmux socket
 # socket_name: foo
@@ -43,17 +43,24 @@ root: ~/
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
+startup_window: load-tui
 
 windows:
-  - dotfiles:
-      root: ~/dotfiles/tmux/.tmux/plugins/
-      layout: main-vertical
+  - load-tui:
+    # root: ~/projects/load-tui
+    layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
-      panes:
-        - vim
-        - zsh
-  # - server: bundle exec rails s
+    panes:
+      - vim
+  - console: 
+    # root: ~/projects/load-tui
+    layout: main-vertical
+    panes:
+      - yarn watch
+      - clear
+        # - nothing:
+        #   - clear
   # - logs: tail -f log/development.log
 

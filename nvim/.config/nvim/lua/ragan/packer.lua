@@ -23,6 +23,9 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
 
+    -- custom format stuff
+    use("fladson/vim-kitty")
+
     -- git stuff
     use('tpope/vim-fugitive')
 
