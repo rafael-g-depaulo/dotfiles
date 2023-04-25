@@ -43,24 +43,25 @@ root: ~/projects/load-tui/
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
-startup_window: load-tui
+# startup_window: load-tui
 
+#! IMPORTANT: components of windows (layout/panes) must be indented twice (it's a bug with tmuxinator it seems)
 windows:
   - load-tui:
     # root: ~/projects/load-tui
-    layout: main-vertical
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-    panes:
-      - vim
+      layout: main-vertical
+        # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+        # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+        # synchronize: after
+      panes:
+        - vim ./src/index.ts
   - console: 
-    # root: ~/projects/load-tui
-    layout: main-vertical
-    panes:
-      - yarn watch
-      - clear
-        # - nothing:
-        #   - clear
-  # - logs: tail -f log/development.log
+      # root: ~/projects/load-tui
+      layout: main-vertical
+      panes:
+        - yarn watch
+        - clear
+          # - nothing:
+          #   - clear
+    # - logs: tail -f log/development.log
 
