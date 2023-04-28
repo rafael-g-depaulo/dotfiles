@@ -15,3 +15,6 @@ end
 
 -- stuff imported from vscode
 map("n", "<C-w>", ":clo<CR>")
+
+-- toggle file tree
+map("n", "<Leader>pv", ":Neotree toggle<CR>")
