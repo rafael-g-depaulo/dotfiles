@@ -5,7 +5,7 @@
 -- add whitespace at the end of file after save
 vim.api.nvim_create_autocmd("BufWritePre", {
   -- command = ":%s/($\ns*)+%$/\r/",
-  -- callback = function()
-  --   vim.cmd(":%s/($\ns*)+%$/AAAAAAA\r/<CR>")
-  -- end,
+  callback = function()
+    --   vim.cmd(":%s/($\ns*)+%$/AAAAAAA\r/<CR>")
+  end,
 })
