@@ -1,0 +1,15 @@
+# Description:
+# 
+# Hi! I'm Ragan and if you're reading this you're using my personal (and public) linux setup
+# this file has some config stuff so that my personal tools and scripts know what to do here
+# in your machine.
+# 
+# If you have any issues here you can reach out to me at (rafael-g-depaulo on github) and i'll
+# help you if i can :D 
+
+repos:
+  - dotfiles
+  - setup
+  - tui-load: ~/projects/load-tui
+  - obsidian-vault: ~/Documents/obsidian-vault
+
