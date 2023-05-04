@@ -18,3 +18,8 @@ map("n", "<C-w>", ":clo<CR>")
 
 -- toggle file tree
 map("n", "<Leader>pv", ":Neotree toggle<CR>")
+
+-- Toggle comments
+-- map("n", "<C-S-a>", ":Commentary<CR>")
+map("n", "<Leader>q", ":Commentary<CR>")
+map("v", "<Leader>q", ":Commentary<CR>")
