@@ -21,5 +21,8 @@ return {
       winbar = true,
       statusline = false,
     },
+    window = {
+      width = 28,
+    },
   },
 }
