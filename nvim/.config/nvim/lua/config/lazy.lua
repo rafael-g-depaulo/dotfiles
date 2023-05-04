@@ -17,6 +17,17 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
     { import = "plugins" },
+
+    -- snippets
+    {
+      "L3MON4D3/LuaSnip",
+      -- follow latest release.
+      version = "1.*",
+      -- -- install jsregexp (optional!).
+      -- build = "make install_jsregexp",
+      -- add default vs-code snippets
+      dependencies = { "rafamadriz/friendly-snippets" },
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
