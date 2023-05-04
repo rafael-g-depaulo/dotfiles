@@ -10,4 +10,7 @@ return {
   -- {
   --   "L3MON4D3/LuaSnip",
   -- },
+
+  -- auto space/add newline to stuff like {} when you <CR> inside it
+  { "windwp/nvim-autopairs" },
 }

@@ -18,6 +18,9 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
 
+    -- map plugin for making keymaps
+    { "b0o/mapx.nvim" },
+
     -- snippets
     {
       "L3MON4D3/LuaSnip",
