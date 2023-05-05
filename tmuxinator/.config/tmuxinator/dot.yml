@@ -1,0 +1,7 @@
+# /home/ragan/.config/tmuxinator/dot.yml
+name: dot
+
+root: ~/dotfiles
+
+windows:
+  - editor: vim .
