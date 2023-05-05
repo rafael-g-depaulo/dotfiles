@@ -10,9 +10,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-M.nvim_create_augroups({
-  -- other autocommands
-  open_folds = {
-    { "BufReadPost,FileReadPost", "*", "normal zR" },
-  },
+vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
+  command = [["zR"]],
+  -- open_folds = {
+  --   { , "*", "normal zR" },
+  -- },
 })
