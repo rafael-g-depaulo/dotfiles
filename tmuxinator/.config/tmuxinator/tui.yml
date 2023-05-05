@@ -8,9 +8,8 @@ windows:
       layout: main-vertical
       panes:
         - vim ./src/index.ts
-        -  # empty
+        - yarn dev
   - console:
       layout: main-vertical
       panes:
         - yarn build-watch
-        -  #empty
