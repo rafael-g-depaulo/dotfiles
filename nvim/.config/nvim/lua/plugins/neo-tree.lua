@@ -17,5 +17,12 @@ return {
         },
       },
     },
+    source_selector = {
+      winbar = true,
+      statusline = false,
+    },
+    window = {
+      width = 28,
+    },
   },
 }

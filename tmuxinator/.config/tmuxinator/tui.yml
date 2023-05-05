@@ -52,9 +52,10 @@ windows:
       layout: main-vertical
       panes:
         - vim ./src/index.ts
-        - yarn dev
+        - # empty
   - console: 
       # root: ~/projects/load-tui
       layout: main-vertical
       panes:
-        - yarn build --watch
+        - yarn build-watch
+        - #empty
