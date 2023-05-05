@@ -9,3 +9,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     --   vim.cmd(":%s/($\ns*)+%$/AAAAAAA\r/<CR>")
   end,
 })
+
+M.nvim_create_augroups({
+  -- other autocommands
+  open_folds = {
+    { "BufReadPost,FileReadPost", "*", "normal zR" },
+  },
+})
