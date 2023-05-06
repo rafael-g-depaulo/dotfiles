@@ -3,6 +3,8 @@
 name: tui
 root: ~/projects/load-tui/
 
+on_project_start: nvm use
+
 windows:
   - vim:
       layout: main-vertical

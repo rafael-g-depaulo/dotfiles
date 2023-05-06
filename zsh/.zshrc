@@ -190,6 +190,7 @@ alias gma="git add -A && git commit -m"
 alias gdiff="git diff"
 alias glog="git log --graph --oneline --decorate --all"
 alias ggstash='git stash push --include-untracked'
+alias ggpop='git stash pop'
 
 # general aliases
 alias copy="xclip -selection clipboard"
