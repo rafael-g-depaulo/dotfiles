@@ -1,0 +1,6 @@
+# /home/ragan/.config/tmuxinator/pe.yml
+name: pe
+root: ~/
+
+windows:
+  - R: R
