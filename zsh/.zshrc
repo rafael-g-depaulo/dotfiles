@@ -203,4 +203,5 @@ alias publicip='curl ifconfig.me'
 alias du1='du -h -d 1'
 alias view='less -XF'
 alias mux='tmuxinator'
+alias t='tmux a &> /dev/null || tmux &> /dev/null'
 
