@@ -1,0 +1,34 @@
+#### Aliases
+# if using code-insiders, alias code
+if command -v code-insiders &> /dev/null; then
+  alias code="code-insiders"
+fi
+
+# if nvim is installed, use it instead of vim
+if command -v nvim &> /dev/null; then
+  alias vim="nvim"
+fi
+
+# git aliases
+alias ga="git add -A"
+alias gm="git commit -m"
+alias gma="git add -A && git commit -m"
+alias gdiff="git diff"
+alias glog="git log --graph --oneline --decorate --all"
+alias ggstash='git stash push --include-untracked'
+alias ggpop='git stash pop'
+
+# general aliases
+alias copy="xclip -selection clipboard"
+alias ports='netstat -a | grep --color="never" -i "listen"'
+alias reload='source ~/.zshrc'
+alias update='sudo apt-get update && sudo apt-get upgrade -y'
+alias backup='tar -zxcf $(date +%Y%m%d).tar.gz *'
+alias path='echo ${PATH//:/\\n}'
+alias tree='tree -C --dirsfirst'
+alias publicip='curl ifconfig.me'
+alias du1='du -h -d 1'
+alias view='less -XF'
+alias mux='tmuxinator'
+alias t='tmux a &> /dev/null || tmux &> /dev/null'
+

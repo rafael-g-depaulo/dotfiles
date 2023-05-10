@@ -115,15 +115,6 @@ plugins=(
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 ########### FROM wsl_setup.sh #############################################################################
 
 ### my zsh settings ############################################################
@@ -172,37 +163,6 @@ fi
 # add custom commands to path
 export PATH="$PATH:$HOME/commands"
 
-#### Aliases
-# if using code-insiders, alias code
-if command -v code-insiders &> /dev/null; then
-  alias code="code-insiders"
-fi
-
-# if nvim is installed, use it instead of vim
-if command -v nvim &> /dev/null; then
-  alias vim="nvim"
-fi
-
-# git aliases
-alias ga="git add -A"
-alias gm="git commit -m"
-alias gma="git add -A && git commit -m"
-alias gdiff="git diff"
-alias glog="git log --graph --oneline --decorate --all"
-alias ggstash='git stash push --include-untracked'
-alias ggpop='git stash pop'
-
-# general aliases
-alias copy="xclip -selection clipboard"
-alias ports='netstat -a | grep --color="never" -i "listen"'
-alias reload='source ~/.zshrc'
-alias update='sudo apt-get update && sudo apt-get upgrade -y'
-alias backup='tar -zxcf $(date +%Y%m%d).tar.gz *'
-alias path='echo ${PATH//:/\\n}'
-alias tree='tree -C --dirsfirst'
-alias publicip='curl ifconfig.me'
-alias du1='du -h -d 1'
-alias view='less -XF'
-alias mux='tmuxinator'
-alias t='tmux a &> /dev/null || tmux &> /dev/null'
-
+### Add Aliases
+ALIASFILE=~/.aliasesrc
+source "$ALIASFILE"
