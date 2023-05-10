@@ -165,4 +165,6 @@ export PATH="$PATH:$HOME/commands"
 
 ### Add Aliases
 ALIASFILE=~/.aliasesrc
-source "$ALIASFILE"
+if [ -f "$ALIASFILE" ]; then
+  source "$ALIASFILE"
+fi
