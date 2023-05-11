@@ -1,0 +1,13 @@
+# /home/ragan/.config/tmuxinator/comm.yml
+
+name: comm
+root: ~/commands
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim .
+  - console:
+      panes:
+        -  # empty
