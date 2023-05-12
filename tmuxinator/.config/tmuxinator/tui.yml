@@ -9,9 +9,9 @@ windows:
   - vim:
       layout: main-vertical
       panes:
-        - vim ./src/index.ts
-        - yarn dev
+        - vim ./src/app.tsx
+        -  # yarn dev
   - console:
       layout: main-vertical
       panes:
-        - yarn build-watch
+        -  # yarn build-watch
