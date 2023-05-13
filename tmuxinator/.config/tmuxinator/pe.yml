@@ -1,6 +1,10 @@
 # /home/ragan/.config/tmuxinator/pe.yml
 name: pe
-root: ~/
+root: "/mnt/C/Users/Ragan/Documents/vault/ragan/UnB/PE 2/"
 
 windows:
-  - R: R
+  - R:
+      layout: main-vertical
+      panes:
+        - R
+        -  # empty
