@@ -1,0 +1,34 @@
+[diff]
+    tool = kitty
+    guitool = kitty.gui
+[difftool]
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+
+[user]
+	name = Rafael G. de Paulo
+	email = rafael.g.depaulo@gmail.com
+
+[core]
+	editor = vim
+	pager = less -x4 # Set the width of indentation for tab characters
+
+# Push only the branch you are now working on
+[push]
+	default = simple
+
+# Make --rebase the default behavior during git pull
+[pull]
+	rebase = true
+
+# Make --prune the default behavior during git fetch
+[fetch]
+	prune = true
+
+# set default branch as main
+[init]
+	defaultBranch = main
