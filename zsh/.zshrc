@@ -78,7 +78,11 @@ plugins=(
   git
   git-hubflow
   # git-flow
-  git-flow-avh
+  # gitfast # git autocompletion but faster
+  # git-flow-avh
+  git-auto-fetch
+  git-escape-magic # auto escapes characters when typing a git command
+  git-extras
   #! REMEMBER THAT THE GIT FLOW TOOL HAS TO BE INSTALLED SEPARATELY
 
   #! RANDOM STUFF AND TOOLS I THINK ARE COOL ###################
@@ -93,9 +97,30 @@ plugins=(
   npm
   yarn
   aws
+  heroku
+  node
+  nvm
+  # docker
+  docker-compose
+  
+  #! MEH #######################################################
+  dotenv
+
+  #! UTILS #####################################################
+  aliases # list aliases
+  alias-finder
+  tmux
+  fzf
+  command-not-found
+  compleat # this should add autocompletion to pretty much any command
+  copybuffer # adds <C-o> to copy current command
+  zsh-interactive-cd # fzf like for cd<Tab>
   
   #! PRETTY ####################################################
   zsh-syntax-highlighting
+  colored-man-pages
+  colorize # this needs ZSH_COLORIZE_TOOL to be set up
+  git-prompt
 )
 
 # User configuration
@@ -130,9 +155,9 @@ ZSH_THEME="robbyrussell" # default theme
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# set up nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# set up nvm (not needed if you're using the nvm plugin)
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 source $ZSH/oh-my-zsh.sh
 
@@ -150,6 +175,9 @@ if command -v nvim &> /dev/null; then
   export EDITOR="nvim"
 fi
 
+# setup for colorize plugin
+ZSH_COLORIZE_TOOL="pygmentize"
+ZSH_COLORIZE_CHROMA_FORMATTER="terminal256"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
@@ -164,6 +192,7 @@ fi
 export PATH="$PATH:$HOME/commands"
 
 ### Add Aliases
+unalias yt # remove yarn test alias
 ALIASFILE=~/.aliasesrc
 if [ -f "$ALIASFILE" ]; then
   source "$ALIASFILE"
