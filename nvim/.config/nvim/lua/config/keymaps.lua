@@ -27,3 +27,9 @@ m.nmap("<Leader>td", "<Leader>kkgccA TODO: ", "Add TODO comment")
 
 -- Clear search
 m.map("<Leader>sq", ':let @/ = ""<CR>', "Clear search")
+
+-- Aliases for command mode commands
+vim.cmd("cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))")
+vim.cmd("cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))")
+vim.cmd("cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))")
+vim.cmd("cnoreabbrev <expr> Qa! ((getcmdtype() is# ':' && getcmdline() is# 'Qa!')?('qa'):('Qa!'))")
