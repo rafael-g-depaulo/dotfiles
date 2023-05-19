@@ -6,4 +6,4 @@ windows:
   - edit:
       layout: main-vertical
       panes:
-        - vim .
+        - vim main.sh
