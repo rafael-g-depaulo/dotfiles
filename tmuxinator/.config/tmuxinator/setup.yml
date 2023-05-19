@@ -1,0 +1,9 @@
+# /home/ragan/.config/tmuxinator/setup.yml
+name: setup
+root: ~/setup
+
+windows:
+  - edit:
+      layout: main-vertical
+      panes:
+        - vim .
