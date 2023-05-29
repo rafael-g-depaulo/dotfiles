@@ -10,6 +10,9 @@ local api = vim.api
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 local M = {}
+
+vim.v.foldlevelstart = 99
+
 -- function to create a list of commands and convert them to autocommands
 -------- This function is taken from https://github.com/norcalli/nvim_utils
 function M.nvim_create_augroups(definitions)

@@ -10,9 +10,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
-  command = [["zR"]],
-  -- open_folds = {
-  --   { , "*", "normal zR" },
-  -- },
+-- Always open files in normal mode (i think this works???)
+vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
+  command = "stopinsert",
 })
+
+-- vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
+--   command = [["zR"]]
+--   -- open_folds = {
+--   --   { , "*", "normal zR" },
+--   -- },
+-- })
