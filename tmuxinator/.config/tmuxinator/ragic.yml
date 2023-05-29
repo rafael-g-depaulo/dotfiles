@@ -1,0 +1,10 @@
+# /home/ragan/.config/tmuxinator/ragic.yml
+
+name: ragic
+root: ~/projects/ragic
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - vim .
+  - logs: # empty
