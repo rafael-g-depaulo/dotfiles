@@ -2,9 +2,19 @@
 
 name: ragic
 root: ~/projects/ragic
+
+on_project_start: "~/.config/tmuxinator/ragic-startup.sh"
+
 windows:
   - vim:
       layout: main-vertical
       panes:
         - vim .
-  - logs: # empty
+
+  - logs: "
+      nvm use || nvm install $(cat .nvmrc)\n
+      gitHasChanges && (ggstash && ggpull && git stash pop) || ggpull\n
+      yarn\n
+      clear\n
+      yarn start\n
+      "

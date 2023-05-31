@@ -20,8 +20,8 @@ m.vmap("<Leader>q", ":Commentary<CR>", "Toggle comment")
 m.inoremap("<C-a>", "<cmd>Commentary<CR>", "Toggle comment")
 
 -- Add empty lines
-m.nnoremap("<Leader>k", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", "Insert empty line above")
-m.nnoremap("<Leader>j", ":set paste<CR>m`o<Esc>``:set nopaste<CR>", "Insert empty line below")
+m.nnoremap("<Leader>k", ":set paste<CR>m`O<Esc>``:set nopaste<CR>k", "Insert empty line above")
+m.nnoremap("<Leader>j", ":set paste<CR>m`o<Esc>``:set nopaste<CR>j", "Insert empty line below")
 
 m.nmap("<Leader>td", "<Leader>kkgccA TODO: ", "Add TODO comment")
 
