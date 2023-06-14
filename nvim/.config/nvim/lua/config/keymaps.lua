@@ -33,3 +33,6 @@ vim.cmd("cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('
 vim.cmd("cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))")
 vim.cmd("cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))")
 vim.cmd("cnoreabbrev <expr> Qa! ((getcmdtype() is# ':' && getcmdline() is# 'Qa!')?('qa'):('Qa!'))")
+
+-- Search and Replace
+m.nmap("<Leader>fd", ":%s//g<Left><Left>", "Find and replace")
