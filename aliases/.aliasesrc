@@ -17,6 +17,7 @@ alias gdiff="git diff"
 alias glog="git log --graph --oneline --decorate --all"
 alias ggstash='git stash push --include-untracked'
 alias ggpop='git stash pop'
+alias gk='gitkraken'
 
 # general aliases
 alias copy="xclip -selection clipboard"
@@ -31,4 +32,4 @@ alias du1='du -h -d 1'
 alias view='less -XF'
 alias mux='tmuxinator'
 alias t='tmux a &> /dev/null || tmux &> /dev/null'
-
+alias tnew='tmux switchc -t `tmux new -dP` || tmux'
