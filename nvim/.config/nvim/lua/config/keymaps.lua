@@ -6,7 +6,10 @@ local m = require("mapx").setup({ global = "skip", whichkey = true })
 
 -- use ; as : to run commands
 m.nmap(";", ":")
-m.vmap(";", ":")
+
+-- make C-d and C-u feel good to use
+m.nnoremap("<C-d>", "<C-d>zz")
+m.nnoremap("<C-u>", "<C-u>zz")
 
 -- stuff imported from vscode
 -- m.map("<C-w>", ":clo<CR>", "Close window")
