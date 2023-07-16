@@ -23,7 +23,7 @@ alias gk='gitkraken'
 alias copy="xclip -selection clipboard"
 alias ports='netstat -a | grep --color="never" -i "listen"'
 alias reload='source ~/.zshrc'
-alias update='sudo apt-get update && sudo apt-get upgrade -y'
+alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo snap refresh'
 alias backup='tar -zxcf $(date +%Y%m%d).tar.gz *'
 alias path='echo ${PATH//:/\\n}'
 alias tree='tree -C --dirsfirst'
