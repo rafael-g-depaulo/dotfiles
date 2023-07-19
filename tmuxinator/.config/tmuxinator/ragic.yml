@@ -16,5 +16,5 @@ windows:
       gitHasChanges && (ggstash && ggpull && git stash pop) || ggpull\n
       yarn\n
       clear\n
-      yarn start\n
+      yarn nx build ragic-lib\n
       "
