@@ -201,3 +201,9 @@ fi
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+
+## If 't' exists (my tmux alias), run it
+if alias t &> /dev/null; then
+  t
+fi
+
