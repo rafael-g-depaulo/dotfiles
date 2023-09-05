@@ -130,6 +130,11 @@ return {
         },
       },
       filesystem = {
+        filtered_items = {
+          visible = true, -- This makes hidden files visible
+          hide_dotfiles = true,
+          hide_gitignode = true,
+        },
         follow_current_file = { enabled = true },
         hijack_netrw_behavior = "open_current",
         use_libuv_file_watcher = true,
