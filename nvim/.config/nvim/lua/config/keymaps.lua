@@ -5,7 +5,7 @@ local m = require("mapx").setup({ global = "skip", whichkey = true })
 -- Add any additional keymaps here
 
 -- use ; as : to run commands
-m.nmap(";", ":")
+-- m.nmap(";", ":")
 
 -- make C-d and C-u feel good to use
 m.nnoremap("<C-d>", "<C-d>zz")
