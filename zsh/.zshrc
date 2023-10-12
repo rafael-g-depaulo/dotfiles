@@ -107,7 +107,7 @@ plugins=(
   dotenv
 
   #! UTILS #####################################################
-  aliases # list aliases
+   aliases # list aliases
   alias-finder
   tmux
   fzf
@@ -121,6 +121,10 @@ plugins=(
   colored-man-pages
   colorize # this needs ZSH_COLORIZE_TOOL to be set up
   git-prompt
+
+  #! VIM INTEGRATION
+  vi-mode
+  # zsh-vi-mode
 )
 
 # User configuration
@@ -206,4 +210,18 @@ fi
 if alias t &> /dev/null; then
   t
 fi
+
+MODE_INDICATOR="%F{white}N %f"
+INSERT_MODE_INDICATOR="%F{yellow}I %f"
+PROMPT="$PROMPT\$(vi_mode_prompt_info)"
+# VISUAL='vi'
+
+TRAPINT() { 
+  if [[ "${KEYMAP}" = "viins" || "${KEYMAP}" = "main" ]]; then
+    zle vi-cmd-mode
+    # zle reset-prompt
+  else
+    return ${128+$1}
+  fi
+}
 

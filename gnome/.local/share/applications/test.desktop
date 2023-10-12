@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Connect Headset
+Comment=Description
+Icon=/home/ragan/Pictures/Screenshots/Screenshot from 2023-03-11 20-19-19.png
+Exec=/home/ragan/commands/connectHeadset
+Terminal=false
+Categories=Ragan

@@ -33,3 +33,9 @@ alias view='less -XF'
 alias mux='tmuxinator'
 alias t='tmux a &> /dev/null || tmux &> /dev/null'
 alias tnew='tmux switchc -t `tmux new -dP` || tmux'
+alias bat='batcat'
+
+# unalias some stuff
+if command -v /usr/local/bin/yad &> /dev/null; then
+  unalias yad
+fi
