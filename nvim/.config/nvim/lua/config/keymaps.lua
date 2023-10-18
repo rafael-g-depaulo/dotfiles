@@ -39,3 +39,6 @@ vim.cmd("cnoreabbrev <expr> Qa! ((getcmdtype() is# ':' && getcmdline() is# 'Qa!'
 
 -- Search and Replace
 m.nmap("<Leader>fd", ":%s//g<Left><Left>", "Find and replace")
+
+-- Open folder in current working directory
+m.nmap("<Leader>D", ":!naut .<CR>", "Open working 'D'irectory")
