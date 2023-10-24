@@ -2,7 +2,7 @@ return {
   -- file searcher using telescope
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "sharkdp/fd" },
   },
 
   -- lets me navigate seamlessly between vim and tmux windows
