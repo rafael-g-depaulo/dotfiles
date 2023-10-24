@@ -1,4 +1,6 @@
-#### Aliases
+# unalias things that my plugins create but i don't want
+unalias yt
+
 # if using code-insiders, alias code
 if command -v code-insiders &> /dev/null; then
   alias code="code-insiders"
@@ -39,3 +41,7 @@ alias bat='batcat'
 if command -v /usr/local/bin/yad &> /dev/null; then
   unalias yad
 fi
+
+# directory stack stuff
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index

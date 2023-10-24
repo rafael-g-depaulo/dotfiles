@@ -123,7 +123,7 @@ plugins=(
   git-prompt
 
   #! VIM INTEGRATION
-  vi-mode
+  # vi-mode
   # zsh-vi-mode
 )
 
@@ -156,6 +156,8 @@ ZSH_THEME="robbyrussell" # default theme
 
 # autojump
 . /usr/share/autojump/autojump.sh
+
+. $HOME/.zshopts.zsh
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -196,7 +198,6 @@ ZSH_COLORIZE_CHROMA_FORMATTER="terminal256"
 export PATH="$PATH:$HOME/commands"
 
 ### Add Aliases
-unalias yt # remove yarn test alias
 ALIASFILE=~/.aliasesrc
 if [ -f "$ALIASFILE" ]; then
   source "$ALIASFILE"
@@ -205,23 +206,23 @@ fi
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-
 ## If 't' exists (my tmux alias), run it
 if alias t &> /dev/null; then
   t
 fi
 
-MODE_INDICATOR="%F{white}N %f"
-INSERT_MODE_INDICATOR="%F{yellow}I %f"
-PROMPT="$PROMPT\$(vi_mode_prompt_info)"
-# VISUAL='vi'
-
-TRAPINT() { 
-  if [[ "${KEYMAP}" = "viins" || "${KEYMAP}" = "main" ]]; then
-    zle vi-cmd-mode
-    # zle reset-prompt
-  else
-    return ${128+$1}
-  fi
-}
+#
+# MODE_INDICATOR="%F{white}N %f"
+# INSERT_MODE_INDICATOR="%F{yellow}I %f"
+# PROMPT="$PROMPT\$(vi_mode_prompt_info)"
+# # VISUAL='vi'
+#
+# TRAPINT() { 
+#   if [[ "${KEYMAP}" = "viins" || "${KEYMAP}" = "main" ]]; then
+#     zle vi-cmd-mode
+#     # zle reset-prompt
+#   else
+#     return ${128+$1}
+#   fi
+# }
 
