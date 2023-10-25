@@ -189,9 +189,8 @@ bar {
 
 ###### startup #################################
 # make sure my left monitor is correctly setup
-exec fixScreen
-
-###### load window compositor and stuff
+exec $HOME/commands/fixScreen
+# load window compositor and stuff
 exec picom -b -c --config ~/.config/picom/picom.conf
 exec nitrogen --restore
 
@@ -225,7 +224,7 @@ bindsym $mod+mod2+KP_6 workspace $ws6
 bindsym $mod+mod2+KP_7 workspace $ws7
 bindsym $mod+mod2+KP_8 workspace $ws8
 
-# make numpad work with moving container to workspace
+# make numpad work with moving container to workspace (not working for some reason)
 bindsym $mod+Shift+KP_1 move container to workspace number $ws1
 bindsym $mod+Shift+KP_2 move container to workspace number $ws2
 bindsym $mod+Shift+KP_3 move container to workspace number $ws3
@@ -236,6 +235,9 @@ bindsym $mod+Shift+KP_7 move container to workspace number $ws7
 bindsym $mod+Shift+KP_8 move container to workspace number $ws8
 bindsym $mod+Shift+KP_9 move container to workspace number $ws9
 bindsym $mod+Shift+KP_0 move container to workspace number $ws10
+
+# Cmd+Alt+l locks screen
+bindsym $mod+Mod1+l exec i3lock-fancy -g -p
 
 # program runner
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -256,5 +258,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 ##### pretty #####################################
 # gaps
 gaps inner 10
-gaps outer 15
+gaps outer 5
+smart_gaps off
 
