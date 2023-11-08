@@ -6,4 +6,4 @@ Comment=Description
 Icon=/home/ragan/.local/share/applications/headset-icon.jpg
 Exec=/home/ragan/commands/connectHeadset
 Terminal=false
-Categories=Ragan
+Categories=Ragan,Settings

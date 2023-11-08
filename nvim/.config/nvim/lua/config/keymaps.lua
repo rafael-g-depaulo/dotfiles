@@ -44,4 +44,4 @@ m.nmap("<Leader>fd", ":%s//g<Left><Left>", "Find and replace")
 m.nmap("<Leader>D", ":!naut .<CR>", "Open working 'D'irectory")
 
 -- Yank to system clipboard
-m.nmap("<Leader>y", '"+y')
+m.nmap("<Leader>y", '"+y', "Yank to system clipboard")

@@ -1,0 +1,3 @@
+Headset, connectHeadset
+^sep()
+Shutdown, shutdown -h now
