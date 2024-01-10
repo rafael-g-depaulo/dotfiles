@@ -219,6 +219,12 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# Move current workspace to different monitor
+bindsym $mod+Shift+Control+Left move workspace to output left
+bindsym $mod+Shift+Control+h move workspace to output left
+bindsym $mod+Shift+Control+Right move workspace to output right
+bindsym $mod+Shift+Control+l move workspace to output right
+
 # ex: in 1 -(mod+2)-> 2 -(mod+2)-> 1
 workspace_auto_back_and_forth yes
 
@@ -254,8 +260,8 @@ bindsym $mod+Mod1+l exec i3lock-fancy -g -p
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Utilities shortcuts
-bindsym Print exec $HOME/commands/screenshot -a
-bindsym --release Print exec $HOME/commands/screenshot -a
+bindsym Print exec $HOME/commands/screenshot -as
+bindsym --release Print exec $HOME/commands/screenshot -as
 bindsym Ctrl+Print exec gnome-screenshot -i
 bindsym --release Ctrl+Print exec gnome-screenshot -i
 
@@ -265,7 +271,8 @@ bindsym $mod + KP_Add exec $HOME/commands/screenZoomIn
 bindsym $mod + KP_Subtract exec $HOME/commands/screenZoomOut
 
 bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86Calculator exec gnome-calculator
+bindsym XF86Calculator exec gnome-calculator --class floating
+for_window [class="floating"] floating enabled
 
 ##### pretty #####################################
 # gaps
