@@ -1,0 +1,3 @@
+#!/bin/bash
+
+$HOME/commands/utils/screenZoom -0.25
