@@ -1,6 +1,3 @@
-# get names of all folders in dotfiles
-DOTFILE_PACKAGES=$(ls -d */)
+#!/bin/bash
 
-for PACKAGE in $DOTFILE_PACKAGES; do
-	stow -t $HOME $PACKAGE -v $@
-done
+. ./commands/.local/bin/importDotfiles
