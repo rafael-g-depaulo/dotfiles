@@ -10,33 +10,32 @@
 #     cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 
 [user]
-  name = Rafael G. de Paulo
-  email = rafael.g.depaulo@gmail.com
+	name = Rafael G. de Paulo
+	email = rafael.g.depaulo@gmail.com
 
 [core]
-  editor = vim
-  # pager = less -x4 # Set the width of indentation for tab characters
+	editor = vim
+  ; pager = less -x4 # Set the width of indentation for tab characters
 
 # Push only the branch you are now working on
 [push]
-  default = simple
+	default = simple
 
 # Make --rebase the default behavior during git pull
 [pull]
-  rebase = true
+	rebase = true
 
 # Make --prune the default behavior during git fetch
 [fetch]
-  prune = true
+	prune = true
 
 # set default branch as main
 [init]
-  defaultBranch = main
+	defaultBranch = main
 
 ###### Delta config here
 [core]
-  pager = delta
-  # editor = nvim
+	pager = less -x4
 
 [interactive]
   diffFilter = delta --color-only
