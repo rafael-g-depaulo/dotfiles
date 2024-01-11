@@ -11,6 +11,9 @@ if command -v nvim &> /dev/null; then
   alias vim="nvim"
 fi
 
+# this allows aliases when using sudo
+alias sudo="sudo "
+
 # git aliases
 alias ga="git add -A"
 alias gm="git commit -m"
@@ -20,6 +23,11 @@ alias glog="git log --graph --oneline --decorate --all"
 alias ggstash='git stash push --include-untracked'
 alias ggpop='git stash pop'
 alias gk='gitkraken'
+
+# rewrite apt for my prefered package manager
+export PKG_MANAGER="nala"
+alias apt="$PKG_MANAGER"
+alias apt-get="$PKG_MANAGER"
 
 # general aliases
 alias copy="xclip -selection clipboard"
