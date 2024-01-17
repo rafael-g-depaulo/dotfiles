@@ -6,4 +6,4 @@ root: /mnt/C/Users/Ragan/Documents/vault/ragan/RPG/R20/scripts/
 
 windows:
   - editor: vim .
-  - log:
+  - log: yarn start
