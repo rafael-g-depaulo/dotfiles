@@ -4,6 +4,6 @@ Encoding=UTF-8
 Name=Connect Headset
 Comment=Description
 Icon=/home/ragan/.local/share/applications/headset-icon.jpg
-Exec=/home/ragan/commands/connectHeadset
+Exec=/home/ragan/.local/bin/connectHeadset
 Terminal=false
 Categories=Ragan,Settings

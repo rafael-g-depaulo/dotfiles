@@ -198,7 +198,7 @@ exec $HOME/.config/polybar/startStatusBar.sh
 
 ###### startup #################################
 # make sure my left monitor is correctly setup
-exec $HOME/commands/fixScreen
+exec $HOME/.local/bin/fixScreen
 # load window compositor and stuff
 exec picom -b -c --config ~/.config/picom/picom.conf
 exec nitrogen --restore
@@ -260,15 +260,15 @@ bindsym $mod+Mod1+l exec i3lock-fancy -g -p
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Utilities shortcuts
-bindsym Print exec $HOME/commands/screenshot -as
-bindsym --release Print exec $HOME/commands/screenshot -as
-bindsym Ctrl+Print exec gnome-screenshot -i
-bindsym --release Ctrl+Print exec gnome-screenshot -i
+bindsym Print exec $HOME/.local/bin/screenshot -as
+bindsym --release Print exec $HOME/.local/bin/screenshot -as
+bindsym Ctrl+Print exec $HOME/.local/bin/screenshot -a
+bindsym --release Ctrl+Print $HOME/.local/bin/screenshot -a
 
-bindsym $mod + minus exec $HOME/commands/screenZoomOut
-bindsym $mod + plus exec $HOME/commands/screenZoomIn
-bindsym $mod + KP_Add exec $HOME/commands/screenZoomIn
-bindsym $mod + KP_Subtract exec $HOME/commands/screenZoomOut
+bindsym $mod + minus exec $HOME/.local/bin/screenZoomOut
+bindsym $mod + plus exec $HOME/.local/bin/screenZoomIn
+bindsym $mod + KP_Add exec $HOME/.local/bin/screenZoomIn
+bindsym $mod + KP_Subtract exec $HOME/.local/bin/screenZoomOut
 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86Calculator exec gnome-calculator --class floating

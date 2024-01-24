@@ -3,7 +3,7 @@
 zoomSign=${1:0:1}
 zoomStep=${1:1}
 rightMonitorName="HDMI-A-0"
-leftMonitorName="DisplayPort-0"
+leftMonitorName="DisplayPort-2"
 windowWidth="1920"
 logs_file="$HOME/logs/screenZoom"
 
