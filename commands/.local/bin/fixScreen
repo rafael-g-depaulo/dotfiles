@@ -6,3 +6,6 @@ xrandr --output HDMI-A-0 --mode 1920x1080
 
 nitrogen --restore
 picom -b -c --config ~/.config/picom/picom.conf
+
+# for some reason this is needed to fix my second screen
+screenZoomIn && screenZoomOut
