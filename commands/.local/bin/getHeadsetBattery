@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bluetoothctl info |
+	grep 'Battery Percentage' |
+	grep -o '([0-9]\+)' |
+	sed -e 's/(//' -e 's/)//' |
+	awk '{ print $1"%" }'

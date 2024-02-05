@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sensors |
+	grep "Package id" |
+	grep --color=never -o "+[0-9]\+.[0-9]\+" |
+	head -1
