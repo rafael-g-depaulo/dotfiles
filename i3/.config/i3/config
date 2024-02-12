@@ -196,6 +196,9 @@ mouse_warping none
 ###### status bar ##############################
 exec $HOME/.config/polybar/startStatusBar.sh
 
+##### my super blaster i3 manager for polybar ########
+exec --no-startup-id "i3-wsm polybar watch"
+
 ###### startup #################################
 # make sure my left monitor is correctly setup
 exec $HOME/.local/bin/fixScreen
