@@ -15,9 +15,9 @@ get_bit_representation() {
 		sed "s/,\([0-9]*\)/$DELIMITER\1 /"
 }
 
-# SPEEDTEST_JSON=$(speedtest-cli --json --timeout 10)
+SPEEDTEST_JSON=$(speedtest-cli --json --timeout 10)
 # SPEEDTEST_JSON=' { "download": 92789407.5061296, "upload": 27522455.963434793, "ping": 19.946, "server": { "url": "http://spt-bsb1.edgeuno.com:8080/speedtest/upload.php", "lat": "-15.7810", "lon": "-47.9196", "name": "Brasília", "country": "Brazil", "cc": "BR", "sponsor": "EdgeUno", "id": "46885", "host": "spt-bsb1.edgeuno.com:8080", "d": 1.5644183161764516, "latency": 19.946 }, "timestamp": "2024-01-03T23:55:18.632715Z", "bytes_sent": 35897344, "bytes_received": 116347162, "share": null, "client": { "ip": "189.6.24.194", "lat": "-15.7792", "lon": "-47.9341", "isp": "Claro NET", "isprating": "3.7", "rating": "0", "ispdlavg": "0", "ispulavg": "0", "loggedin": "0", "country": "BR" } } '
-SPEEDTEST_JSON=' { "download": 166480344.45292532, "upload": 52050746.84997937, "ping": 20.523, "server": { "url": "http://spt-bsb1.edgeuno.com:8080/speedtest/upload.php", "lat": "-15.7810", "lon": "-47.9196", "name": "Brasília", "country": "Brazil", "cc": "BR", "sponsor": "EdgeUno", "id": "46885", "host": "spt-bsb1.edgeuno.com:8080", "d": 1.5644183161764516, "latency": 20.523 }, "timestamp": "2024-01-04T00:30:18.882324Z", "bytes_sent": 66011136, "bytes_received": 208538476, "share": null, "client": { "ip": "189.6.24.194", "lat": "-15.7792", "lon": "-47.9341", "isp": "Claro NET", "isprating": "3.7", "rating": "0", "ispdlavg": "0", "ispulavg": "0", "loggedin": "0", "country": "BR" } } '
+# SPEEDTEST_JSON=' { "download": 166480344.45292532, "upload": 52050746.84997937, "ping": 20.523, "server": { "url": "http://spt-bsb1.edgeuno.com:8080/speedtest/upload.php", "lat": "-15.7810", "lon": "-47.9196", "name": "Brasília", "country": "Brazil", "cc": "BR", "sponsor": "EdgeUno", "id": "46885", "host": "spt-bsb1.edgeuno.com:8080", "d": 1.5644183161764516, "latency": 20.523 }, "timestamp": "2024-01-04T00:30:18.882324Z", "bytes_sent": 66011136, "bytes_received": 208538476, "share": null, "client": { "ip": "189.6.24.194", "lat": "-15.7792", "lon": "-47.9341", "isp": "Claro NET", "isprating": "3.7", "rating": "0", "ispdlavg": "0", "ispulavg": "0", "loggedin": "0", "country": "BR" } } '
 
 DOWN_SPEED=$(echo "$SPEEDTEST_JSON" | jq '.download')
 UP_SPEED=$(echo "$SPEEDTEST_JSON" | jq '.upload')
