@@ -1,0 +1,9 @@
+# /home/ragan/.config/tmuxinator/foundry.yml
+
+name: foundry
+
+root: ~/projects/r20-foundry/
+
+windows:
+  - editor: vim .
+  - log: ggsync && yarn start
