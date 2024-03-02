@@ -143,16 +143,16 @@ bindsym $mod+0 workspace $ws10
 bindsym $mod+x [urgent=latest] focus
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $docs
-bindsym $mod+Shift+4 move container to workspace $steam
-bindsym $mod+Shift+5 move container to workspace $games
-bindsym $mod+Shift+6 move container to workspace $spotify
-bindsym $mod+Shift+7 move container to workspace $discord
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $docs; workspace $docs
+bindsym $mod+Shift+4 move container to workspace $steam; workspace $steam
+bindsym $mod+Shift+5 move container to workspace $games; workspace $games
+bindsym $mod+Shift+6 move container to workspace $spotify; workspace $spotify
+bindsym $mod+Shift+7 move container to workspace $discord; workspace $discord
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 # default workspaces for stuff
 assign [class="^steam$"] workspace $steam
@@ -160,6 +160,8 @@ assign [class="obsidian"] workspace $docs
 assign [class="discord"] workspace $discord
 assign [class="spotify"] workspace $spotify
 assign [class="steam_app"] workspace $games
+# taken from https://unix.stackexchange.com/a/483937
+for_window [class="Spotify"] move to workspace $spotify
 
 # default display for workspaces
 workspace $steam output $leftMonitor

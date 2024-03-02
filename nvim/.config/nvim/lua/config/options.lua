@@ -4,3 +4,7 @@
 
 -- Dont automatically yank to system clipboard
 vim.opt.clipboard = "unnamed"
+
+vim.wo.wrap = true
+vim.wo.linebreak = true
+vim.wo.list = false -- extra option I set in addition to the ones in your question
