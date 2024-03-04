@@ -197,6 +197,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # add custom commands to path
 export PATH="$PATH:$HOME/commands"
 
+# Add current path to PATH
+export PATH="$PATH:."
+
 ### Add Aliases
 ALIASFILE=~/.aliasesrc
 if [ -f "$ALIASFILE" ]; then
