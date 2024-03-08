@@ -200,6 +200,9 @@ export PATH="$PATH:$HOME/commands"
 # Add current path to PATH
 export PATH="$PATH:."
 
+# Go path
+export PATH="$PATH:/usr/local/go/bin"
+
 ### Add Aliases
 ALIASFILE=~/.aliasesrc
 if [ -f "$ALIASFILE" ]; then
