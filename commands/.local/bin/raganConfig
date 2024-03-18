@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# got from oficial yq docs (https://mikefarah.gitbook.io/yq/operators/reduce)
+yq eval-all '. as $item ireduce ({}; . * $item )' ~/.ragan/*.raganrc.yml -N -o=json | jq

@@ -5,11 +5,12 @@
 # in your machine.
 # 
 # If you have any issues here you can reach out to me at (rafael-g-depaulo on github) and i'll
-# help you if i can :D 
+# help you if i can : 
 
-repos:
-  - dotfiles
-  - setup
-  - tui-load: ~/projects/load-tui
-  - obsidian-vault: ~/Documents/obsidian-vault
+test: asdkasd
 
+# drives:
+#   - name: my-docs
+#     path: /mnt/C/Users/Ragan/Documents/my Documents (like, actual documents)
+#   - name: test
+#     path: /dev/null
