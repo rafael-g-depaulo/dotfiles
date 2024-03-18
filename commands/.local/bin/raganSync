@@ -24,13 +24,11 @@ function syncRepo() {
 		git stash push --include-untracked -m "temp" &>/dev/null
 	fi
 
-	# ggsync &>/dev/null
-
+	echo "  - Syncing repo"
 	CUR_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 	git rebase origin $CUR_BRANCH &>/dev/null
-	ggpush &>/dev/null
-
-	echo "  - Syncing repo"
+	ggsync &>/dev/null
+	# ggpush &>/dev/null
 
 	if [ "$REPO_HAS_CHANGES" = "true" ]; then
 		git stash pop &>/dev/null

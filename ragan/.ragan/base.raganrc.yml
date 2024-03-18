@@ -7,7 +7,8 @@
 # If you have any issues here you can reach out to me at (rafael-g-depaulo on github) and i'll
 # help you if i can : 
 
-test: asdkasd
+repos:
+  dotfiles: ~/dotfiles
 
 # drives:
 #   - name: my-docs
