@@ -1,30 +1,46 @@
 #!/bin/bash
 
-FOLDERS=$(echo "commands,setup,dotfiles" | tr ',' '\n')
+REPOS=$(raganConfig | jq -rc '.repos | to_entries | .[]')
 
 function syncRepo() {
-  cd "$HOME/$1"
+	local REPO_NAME=$(echo "$1" | jq -r '.key')
+	local REPO_PATH=$(echo "$1" | jq -r '.value')
 
-  pwd
-  echo "hi from $1"
+	# expand ~/ if present
+	case "$REPO_PATH" in "~/"*)
+		REPO_PATH="${HOME}/${REPO_PATH#"~/"}"
+		;;
+	esac
 
-  # TODO: handle git errors (merge conflicts, stuff)
+	cd "$REPO_PATH"
+	echo "$REPO_NAME repo: ($REPO_PATH)"
 
-  if gitHasChanges; then
-    REPO_HAS_CHANGES="true"
-    git stash push --include-untracked -m "temp" &> /dev/null
-    echo "You have uncommitted changes in $folder"
-  fi
+	# TODO: handle git errors (merge conflicts, stuff)
 
-  # ggsync &> /dev/null &
-  ggsync &> /dev/null
+	if gitHasChanges; then
+		REPO_HAS_CHANGES="true"
+		echo "  - You have uncommitted changes in $REPO_NAME"
+		echo "  - Stashing uncommited changes"
+		git stash push --include-untracked -m "temp" &>/dev/null
+	fi
 
-  if [ "$REPO_HAS_CHANGES" = "true" ]; then
-    git stash pop &> /dev/null
-  fi
+	# ggsync &>/dev/null
+
+	CUR_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+	git rebase origin $CUR_BRANCH &>/dev/null
+	ggpush &>/dev/null
+
+	echo "  - Syncing repo"
+
+	if [ "$REPO_HAS_CHANGES" = "true" ]; then
+		git stash pop &>/dev/null
+		echo "  - Popping previously stashed changes"
+	fi
+
+	echo
 }
 
-for folder in $FOLDERS; do
-(syncRepo $folder) &
+# echo "folders |$FOLDERS|"
+for folder in $REPOS; do
+	(syncRepo $folder)
 done
-
