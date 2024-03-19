@@ -9,7 +9,7 @@ while read -r line; do
 	echo "syncing folder \"$(basename "$localFolderPath")\""
 	echo "   with remote folder \"$driveFolderName\""
 
-	rclone bisync -n "$localFolderPath" "$rcloneDriveRemoteName:$name"
+	rclone bisync -n "$localFolderPath" "$rcloneDriveRemoteName:$driveFolderName" >/dev/null
 
 done < <(raganConfig | jq -c '.drives[]')
 
