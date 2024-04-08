@@ -46,6 +46,10 @@ alias t='tmux a &> /dev/null || tmux &> /dev/null'
 alias tnew='tmux switchc -t `tmux new -dP` || tmux'
 alias bat='batcat'
 
+# complex fzf stuff
+# alias f="find * -type f | fzf --preview 'bat --color=always {}'"
+alias f="nvim \$(git ls-files | fzf --preview 'bat --color=always {}')"
+
 # unalias some stuff
 if command -v /usr/local/bin/yad &> /dev/null; then
   unalias yad

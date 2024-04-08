@@ -176,10 +176,11 @@ export PATH="$PATH:$HOME/.local/bin"
 # which command to use to run vs code (used for git editor config)
 export VSCODE_EDITOR="code-insiders"
 
-# if using nvim, set it as global editor
-if command -v nvim &> /dev/null; then
-  export EDITOR="nvim"
-fi
+# # if using nvim, set it as global editor
+# if command -v nvim &> /dev/null; then
+#   export EDITOR="nvim"
+# fi
+export EDITOR="/home/linuxbrew/.linuxbrew/bin/nvim"
 
 # setup for colorize plugin
 ZSH_COLORIZE_TOOL="pygmentize"
