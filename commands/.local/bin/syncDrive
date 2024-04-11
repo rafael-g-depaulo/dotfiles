@@ -1,16 +1,16 @@
 #!/bin/bash
 
-rcloneDriveRemoteName="drive"
 syncNetworkThrottle="10M"
 
 while read -r line; do
-	driveFolderName=$(echo $line | jq -r '.name')
-	localFolderPath=$(echo $line | jq -r '.path')
+	driveFolderName=$(echo $line | jq -r '.remotePath')
+	localFolderPath=$(echo $line | jq -r '.localPath')
+	rcloneDriveRemoteName=$(echo $line | jq -r '.remote')
 
 	echo "syncing folder \"$(basename "$localFolderPath")\""
 	echo "   with remote folder \"$driveFolderName\""
 
-	rclone bisync -n "$localFolderPath" "$rcloneDriveRemoteName:$driveFolderName" --bwlimit $syncNetworkThrottle >/dev/null
+	rclone bisync "$localFolderPath" "$rcloneDriveRemoteName:$driveFolderName" --bwlimit $syncNetworkThrottle >/dev/null
 
 done < <(raganConfig | jq -c '.drives[]')
 

@@ -1,4 +1,10 @@
 
 drives:
-  - name: my-docs
-    path: /mnt/C/Users/Ragan/Documents/my Documents (like, actual documents)
+  - remote: drive
+    remotePath: my-docs
+    localPath: /mnt/C/Users/Ragan/Documents/my Documents (like, actual documents)
+
+  - remote: labfaz-adr
+    remotePath: "1 Documentação/ADR's"
+    localPath: /home/ragan/Documents/LabFaz-ADR
+
