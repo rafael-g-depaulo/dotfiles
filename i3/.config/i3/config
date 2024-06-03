@@ -131,8 +131,8 @@ set $rightMonitor HDMI-A-0
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $docs
-bindsym $mod+4 workspace $steam
+bindsym $mod+3 workspace $steam
+bindsym $mod+4 workspace $docs
 bindsym $mod+5 workspace $games
 bindsym $mod+6 workspace $spotify
 bindsym $mod+7 workspace $discord
@@ -168,6 +168,7 @@ for_window [class="Spotify"] move to workspace $spotify
 workspace $steam output $leftMonitor
 workspace $spotify output $leftMonitor
 workspace $docs output $rightMonitor
+workspace $games output $rightMonitor
 workspace $ws1 output $leftMonitor
 workspace $ws2 output $rightMonitor
 
@@ -175,7 +176,7 @@ workspace $ws2 output $rightMonitor
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# exit i4 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -220,9 +221,8 @@ default_border none
 # auto focus on newly opened app
 focus_on_window_activation focus
 # allow dragging of windows by default
-tiling_drag titlebar modifier
-floating_modifier Mod4
-
+# tiling_drag titlebar modifier
+# floating_modifier Mod4
 
 ###### status bar ##############################
 exec $HOME/.config/polybar/startStatusBar.sh
@@ -262,6 +262,12 @@ bindsym $mod+Shift+Control+l move workspace to output right
 # ex: in 1 -(mod+2)-> 2 -(mod+2)-> 1
 workspace_auto_back_and_forth yes
 
+# scratchpad (i.e. hide window)
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+KP_divide move scratchpad
+# Show the first scratchpad window
+bindsym $mod+KP_divide scratchpad show
+
 # make numpad work with workspace switching
 bindsym $mod+mod2+KP_1 workspace $ws1
 bindsym $mod+mod2+KP_2 workspace $ws2
@@ -272,13 +278,10 @@ bindsym $mod+mod2+KP_6 workspace $spotify
 bindsym $mod+mod2+KP_7 workspace $discord
 bindsym $mod+mod2+KP_8 workspace $ws8
 
-# move workspaces
-bindsym $mod+Shift_L+Right move workspace to output right
-
 # make numpad work with moving container to workspace (source: https://github.com/i3/i3/issues/2558#issuecomment-405577744)
 bindsym $mod+Shift+Mod2+KP_End move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+Mod2+KP_Down move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+Mod2+KP_ext move container to workspace $steam; workspace $steam
+bindsym $mod+Shift+Mod2+KP_Next move container to workspace $steam; workspace $steam
 bindsym $mod+Shift+Mod2+KP_Left move container to workspace $docs; workspace $docs
 bindsym $mod+Shift+Mod2+KP_Begin move container to workspace $games; workspace $games
 bindsym $mod+Shift+Mod2+KP_Right move container to workspace $spotify; workspace $spotify
