@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # got from oficial yq docs (https://mikefarah.gitbook.io/yq/operators/reduce)
-yq eval-all '. as $item ireduce ({}; . * $item )' ~/.ragan/*.raganrc.yml -N -o=json | jq
+yq eval-all '. as $item ireduce ({}; . * $item )' ~/.ragan/.raganrc.yml ~/.ragan/*.raganrc.yml -N -o=json | jq
 
 # yq eval-all '. as $d1 | {} as $d2 |
 #    ($d1 | .repos | keys | .[]) as $i ireduce($d2;

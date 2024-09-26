@@ -1,4 +1,4 @@
 #!/bin/bash
 
-xclip -o -selection
+xclip -o -selection clipboard
 echo

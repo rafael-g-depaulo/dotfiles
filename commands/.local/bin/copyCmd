@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+# set up history since we're in a non-interactive shell
+HISTSIZE=999999999
+fc -R ~/.zsh_history
+
+# $HISTORY_CMD
+fc -ril -200 | fzf | cut -d ' ' -f 8- | xclip -selection clipboard
+
+echo "copied command \"$(paste)\" to clipboard"

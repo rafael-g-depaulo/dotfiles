@@ -313,10 +313,9 @@ for_window [class="floating"] floating enabled
 
 ##### pretty #####################################
 # gaps
-gaps inner 10
-gaps outer 5
-smart_gaps off
-
+# gaps inner 10
+# gaps outer 5
+# smart_gaps off
 
 ##### initial commands ############################
 exec --no-startup-id i3-msg workspace 1

@@ -24,7 +24,7 @@ alias ggstash='git stash push --include-untracked'
 alias ggpop='git stash pop'
 alias gk='gitkraken'
 
-# rewrite apt for my prefered package manager
+# override apt for my prefered package manager
 export PKG_MANAGER="nala"
 alias apt="$PKG_MANAGER"
 alias apt-get="$PKG_MANAGER"
@@ -46,9 +46,12 @@ alias t='tmux a &> /dev/null || tmux &> /dev/null'
 alias tnew='tmux switchc -t `tmux new -dP` || tmux'
 alias bat='batcat'
 
+# personal commands
+alias c!='fc -l -1 | cut -d " " -f 5- | copy | echo copied \"$(paste)\" to clipboard'
+
 # complex fzf stuff
-# alias f="find * -type f | fzf --preview 'bat --color=always {}'"
-alias f="nvim \$(git ls-files | fzf --preview 'bat --color=always {}')"
+alias f="find * -type f | fzf --preview 'viu {} 2> ~/logs/viu.log || batcat --color=always {}'"
+# alias f="nvim \$(git ls-files | fzf --preview 'batcat --color=always {}')"
 
 # unalias some stuff
 if command -v /usr/local/bin/yad &> /dev/null; then
