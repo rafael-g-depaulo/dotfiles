@@ -6,9 +6,8 @@ root: ~/projects/r20-foundry/
 
 windows:
   - editor: vim .
-  - log: ggsync && yarn start
+  - log: ggsync && yarn watch
   - foundry:
       layout: main-horizontal
       panes:
         - foundryvtt
-        - ./compile.sh
