@@ -195,14 +195,22 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f "/$HOME/.ghcup/env" ] && source "/$HOME/.ghcup/env" # ghcup-env
 
-# add custom commands to path
-export PATH="$PATH:$HOME/commands"
+# useless now that i auto import commands to ~/.local/bin
+# # add custom commands to path
+# export PATH="$PATH:$HOME/commands"
 
 # Add current path to PATH
 export PATH="$PATH:."
 
 # Go path
 export PATH="$PATH:/usr/local/go/bin"
+
+# Add cargo path to path
+export PATH="$PATH:/home/$USER/.cargo/bin"
+
+# Configure nnn
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_PLUG='c:fcd;d:dragd;f:finder;o:fzopen;p:preview-tui;j:jump;i:imgview'
 
 ### Add Aliases
 ALIASFILE=~/.aliasesrc
