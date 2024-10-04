@@ -48,6 +48,7 @@ alias bat='batcat'
 
 # personal commands
 alias c!='fc -l -1 | cut -d " " -f 5- | copy | echo copied \"$(paste)\" to clipboard'
+alias regexReplace='perl -pe'
 
 # complex fzf stuff
 alias f="find * -type f | fzf --preview 'viu {} 2> ~/logs/viu.log || batcat --color=always {}'"

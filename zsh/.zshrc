@@ -223,7 +223,9 @@ fi
 
 ## If 't' exists (my tmux alias), run it
 if alias t &> /dev/null; then
-  t
+  if [[ ! "$TERM_PROGRAM" == "vscode" ]]; then
+    t
+  fi
 fi
 
 #
