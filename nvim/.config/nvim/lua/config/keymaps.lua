@@ -13,6 +13,7 @@ m.nnoremap("<C-u>", "<C-u>zz")
 
 -- stuff imported from vscode
 -- m.map("<C-w>", ":clo<CR>", "Close window")
+m.map("<Leader>W", ":bd<CR>", "Close window")
 
 -- toggle file tree
 m.nmap("<Leader>o", ":Neotree toggle<CR>", "Toggle file tree")
@@ -23,7 +24,13 @@ m.nmap("<Leader>q", ":Commentary<CR>", "Toggle comment")
 m.inoremap("<C-a>", "<cmd>Commentary<CR>", "Toggle comment")
 
 -- Add empty lines
-m.nnoremap("<Leader>k", ":set paste<CR>m`O<Esc>``:set nopaste<CR>k", "Insert empty line above")
+m.nnoremap(
+  "<Leader>k",
+  ":set paste<CR>m`O<Esc>``:set nopaste<CR>k",
+  m.silent,
+  { silent = true },
+  "Insert empty line above"
+)
 m.nnoremap("<Leader>j", ":set paste<CR>m`o<Esc>``:set nopaste<CR>j", "Insert empty line below")
 
 m.nmap("<Leader>td", "<Leader>kkgccA TODO: ", "Add TODO comment")

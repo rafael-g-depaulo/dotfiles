@@ -26,4 +26,7 @@ return {
       width = 20,
     },
   },
+  keys = {
+    { "<leader>i", "<cmd>Neotree filesystem reveal left<CR>", desc = "Focus filetree" },
+  },
 }
