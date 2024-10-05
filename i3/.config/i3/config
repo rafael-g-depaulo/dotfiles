@@ -316,8 +316,8 @@ for_window [class="floating"] floating enabled
 
 ##### pretty #####################################
 # gaps
-# gaps inner 10
-# gaps outer 5
+gaps inner 10
+gaps outer 5
 # smart_gaps off
 
 ##### initial commands ############################
