@@ -9,6 +9,6 @@ DIR_TO_OPEN=$(realpath ${1:-.})
 kitten @ launch \
   --copy-env --env NNN_FIFO='/tmp/nnn.fifo' --env NNN_PLUG='c:fcd;d:dragd;f:finder;o:fzopen;p:preview-tui;j:jump;i:imgview' --env NNN_PAGER="batcat --style=changes --decorations=always --color=always" \
   --type=window --location=vsplit --color="background=#000" \
-  --to="unix:/tmp/kitty-$KITTY_PID" \
+  --to="unix:/tmp/kitty-main" \
   nnn $NNN_AUTO_PLUGS \
   $DIR_TO_OPEN &>/dev/null
