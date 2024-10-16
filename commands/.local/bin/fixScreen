@@ -9,3 +9,8 @@ picom -b -c --config ~/.config/picom/picom.conf
 
 # for some reason this is needed to fix my second screen
 screenZoomIn && screenZoomOut
+
+if [[ -x $(which startStatusBar) ]]; then
+  killall polybar
+  startStatusBar
+fi

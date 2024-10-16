@@ -49,6 +49,9 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal --listen-on unix:/tmp/kitty-main
 bindsym $mod+KP_Enter exec i3-sensible-terminal --listen-on unix:/tmp/kitty-main
 
+# Fix screen
+bindsym $mod+Shift+f exec fixScreen
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -76,7 +79,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+le move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
