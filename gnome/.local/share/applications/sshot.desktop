@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=ss Screenshot
+Comment=Description
+Exec=/home/ragan/.local/bin/screenshot -sa
+Terminal=false
+Categories=Ragan,Settings
