@@ -168,7 +168,7 @@ assign [class="steam_app"] workspace $games
 for_window [class="Spotify"] move to workspace $spotify
 
 # default display for workspaces
-workspace $steam output $leftMonitor
+workspace $steam output $rightMonitor
 workspace $spotify output $leftMonitor
 workspace $docs output $rightMonitor
 workspace $games output $rightMonitor
@@ -226,6 +226,11 @@ focus_on_window_activation focus
 # allow dragging of windows by default
 # tiling_drag titlebar modifier
 # floating_modifier Mod4
+
+###### steam popups start floating
+# for_window [class="steam" title="(?!Steam)"] floating enable, resize set 640 480
+
+for_window [title="Bitwarden"] floating enable, resize set 481 740
 
 ###### status bar ##############################
 exec $HOME/.config/polybar/startStatusBar.sh

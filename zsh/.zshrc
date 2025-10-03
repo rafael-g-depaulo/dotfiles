@@ -100,7 +100,7 @@ plugins=(
   heroku
   node
   nvm
-  # docker
+  docker
   docker-compose
   
   #! MEH #######################################################
@@ -160,10 +160,6 @@ ZSH_THEME="robbyrussell" # default theme
 . $HOME/.zshopts.zsh
 
 export XDG_CONFIG_HOME="$HOME/.config"
-
-# set up nvm (not needed if you're using the nvm plugin)
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 source $ZSH/oh-my-zsh.sh
 
@@ -243,5 +239,11 @@ fi
 #   fi
 # }
 
-
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+## aws autocomplete
+# export PATH="/usr/bin"
+

@@ -2,7 +2,7 @@
 
 name: r20
 
-root: /mnt/C/Users/Ragan/Documents/vault/ragan/RPG/R20/scripts/
+root: /home/ragan/Documents/obsidian-vault/RPG/R20/scripts
 
 windows:
   - editor: vim .

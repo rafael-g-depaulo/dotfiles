@@ -4,6 +4,8 @@ name: foundry
 
 root: ~/projects/r20-foundry/
 
+on_project_start: 'echo "amusing-concrete-woodcock.ngrok-free.app" | copy'
+
 windows:
   - editor: vim .
   - log: ggsync && yarn watch
@@ -11,3 +13,4 @@ windows:
       layout: main-horizontal
       panes:
         - foundryvtt
+        - ngrok http 4343 --url=amusing-concrete-woodcock.ngrok-free.app
