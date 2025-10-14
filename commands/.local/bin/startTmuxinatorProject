@@ -9,7 +9,7 @@ fi
 # Get project name
 PROJECT_NAME=$(
   tmuxinator list |
-    tail -n +2 |
+    tail +2 |
     perl -pe 's/(\w+)\s+/$1\n/g' |
     fzf --preview "batcat --color=always $HOME/.config/tmuxinator/{}.yml" --cycle $Q_PARAM
 )
