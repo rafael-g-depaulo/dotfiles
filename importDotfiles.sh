@@ -1,3 +1,3 @@
 #!/bin/bash
 
-. ./commands/.local/bin/importDotfiles
+. ./commands/.ragan/bin/importDotfiles

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# restart audio
+pulseaudio -k
+pulseaudio --start
+
+# connect headset that was disconnected by the restart
+connectHeadset
+

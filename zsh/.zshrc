@@ -198,6 +198,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Add current path to PATH
 export PATH="$PATH:."
 
+# Add current package node_modules bins to path
+export PATH="$PATH:./node_modules/.bin"
+
 # Go path
 export PATH="$PATH:/usr/local/go/bin"
 
@@ -213,6 +216,12 @@ ALIASFILE=~/.aliasesrc
 if [ -f "$ALIASFILE" ]; then
   source "$ALIASFILE"
 fi
+
+# Add kitty bin files to path
+export PATH="$PATH:$HOME/.local/kitty.app/bin"
+
+# Add custom commands to path
+export PATH="$PATH:$HOME/.ragan/bin"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

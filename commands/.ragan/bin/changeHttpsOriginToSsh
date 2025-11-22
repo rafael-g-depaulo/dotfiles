@@ -1,0 +1,14 @@
+#!/bin/bash
+
+CURRENT_PATH=$(pwd)
+REPO_PATH=$(realpath ${1:-./})
+REMOTE_NAME=${2:-origin}
+
+cd $REPO_PATH
+HTTPS_URL=$(git remote get-url $REMOTE_NAME)
+SSH_URL=$(echo $HTTPS_URL | sed 's|https://\([^/]*\)/|git@\1:|')
+git remote remove $REMOTE_NAME
+git remote add $REMOTE_NAME $SSH_URL
+# come back to original path 
+cd $CURRENT_PATH
+

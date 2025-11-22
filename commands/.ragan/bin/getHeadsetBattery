@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# exit with error code if headset not connected
+bluetoothctl info | grep W800BT &>/dev/null || (echo "" && exit 1)
+
+bluetoothctl info |
+	grep 'Battery Percentage' |
+	grep -o '([0-9]\+)' |
+	sed -e 's/(//' -e 's/)//' |
+	awk '{ print $1"%" }'

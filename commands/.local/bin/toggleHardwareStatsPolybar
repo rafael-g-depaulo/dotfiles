@@ -1,7 +1,0 @@
-#!/bin/bash
-
-hardware_modules=$(echo "cpu-temp speedtest memory cpu gpu wlan eth filesystem" | tr ' ' '\n')
-
-while read -r action; do
-	polybar-msg action "#$action.module_toggle"
-done <<<"$hardware_modules"

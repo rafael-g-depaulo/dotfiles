@@ -1,0 +1,44 @@
+#!/bin/bash
+
+REPOS=$(raganConfig | jq -rc '.repos | to_entries | .[]')
+
+function syncRepo() {
+	local REPO_NAME=$(echo "$1" | jq -r '.key')
+	local REPO_PATH=$(echo "$1" | jq -r '.value')
+
+	# expand ~/ if present
+	case "$REPO_PATH" in "~/"*)
+		REPO_PATH="${HOME}/${REPO_PATH#"~/"}"
+		;;
+	esac
+
+	cd "$REPO_PATH"
+	echo "$REPO_NAME repo: ($REPO_PATH)"
+
+	# TODO: handle git errors (merge conflicts, stuff)
+
+	if gitHasChanges; then
+		REPO_HAS_CHANGES="true"
+		echo "  - You have uncommitted changes in $REPO_NAME"
+		echo "  - Stashing uncommited changes"
+		git stash push --include-untracked -m "temp" &>/dev/null
+	fi
+
+	echo "  - Syncing repo"
+	CUR_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+	git rebase origin $CUR_BRANCH &>/dev/null
+	ggsync &>/dev/null
+	# ggpush &>/dev/null
+
+	if [ "$REPO_HAS_CHANGES" = "true" ]; then
+		git stash pop &>/dev/null
+		echo "  - Popping previously stashed changes"
+	fi
+
+	echo
+}
+
+# echo "folders |$FOLDERS|"
+for folder in $REPOS; do
+	(syncRepo $folder)
+done

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-repoUrl=$1
-destination=${2:-$(sed 's|.*\/||' <<<$repoUrl)}
-
-git clone --depth=1 $repoUrl $destination
-rm -rf "$destination/.git"

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-radeontop -l 1 -d - |
-	grep -o --color=NONE 'gpu [[:digit:]]\+.[[:digit:]]' |
-	awk '{print $2"%"}'

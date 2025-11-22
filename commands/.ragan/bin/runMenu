@@ -1,0 +1,5 @@
+#!/bin/bash
+
+MENU="${1:-power}"
+
+cat "$HOME/.config/jgmenu/menus/$MENU.csv" | jgmenu --simple $@

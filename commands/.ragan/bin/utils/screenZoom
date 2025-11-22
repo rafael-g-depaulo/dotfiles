@@ -1,0 +1,45 @@
+#!/bin/bash
+
+zoomSign=${1:0:1}
+zoomStep=${1:1}
+rightMonitorName="HDMI-A-0"
+leftMonitorName="DisplayPort-2"
+windowWidth="1920"
+logs_file="$HOME/logs/screenZoom"
+
+# get current scale for all monitors
+declare -A monitor_scales
+
+monitor_scales_str=$(xrandr | grep connected | grep -v disconnected | sed 's/primary //gi' | awk '{ print $1" "$3 }' | sed "s/x.*/ $windowWidth/g" | awk '{ print $1 " " $2/$3 }')
+
+# put info into dictionary
+while read -r line; do
+	# parse line and get monitor name and scale into $1 and $2
+	set -- $line
+	monitor_scales[$1]=$2
+done <<<"$monitor_scales_str"
+
+# get active monitor from focused workspace
+focused_monitor=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused) | .output')
+
+new_scale=$(bc <<<"${monitor_scales[$focused_monitor]}$zoomSign$zoomStep")
+
+echo "Focused monitor: $focused_monitor. Scale: ${monitor_scales[$focused_monitor]} -> $new_scale (+$zoomStep)" >>"$logs_file"
+
+# update scale
+monitor_scales[$focused_monitor]=$new_scale
+
+# set new scale
+xrandr --output "$focused_monitor" --scale $new_scale
+# make sure that my main screen is positioned correctly
+leftMonitorWidth=$( (bc <<<"${monitor_scales[$leftMonitorName]}*$windowWidth") | awk '{ print int($1) }')
+
+# make sure right monitor is positioned correctly
+xrandr --output "$rightMonitorName" --pos ${leftMonitorWidth}x0
+
+# focus on current monitor
+i3-msg focus output $focused_monitor &>/dev/null
+
+# logs
+echo "New Monitor Width: $leftMonitorWidth" >>"$logs_file"
+echo "---------------------------------------" >>"$logs_file"

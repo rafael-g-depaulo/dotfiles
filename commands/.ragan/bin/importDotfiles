@@ -1,0 +1,12 @@
+# get names of all folders in dotfiles
+
+DOTFILES_DIR="$HOME/dotfiles"
+
+(
+  cd $DOTFILES_DIR
+  DOTFILE_PACKAGES=$(ls -d */)
+
+  for PACKAGE in $DOTFILE_PACKAGES; do
+    stow -t $HOME $PACKAGE -v $@
+  done
+)

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# sensors |
+# 	grep "Package id" |
+# 	grep --color=never -o "+[0-9]\+.[0-9]\+" |
+# 	head -1
+#
+
+## Counting all cores
+# sensors -j | jq '.["coretemp-isa-0000"] | to_entries | .[].value | select(objects) | to_entries | .[] | select(.key | endswith("input")) | .value ' | jq -s 'add / length'
+
+CORES_TEST='test("Core"; "i") and test("[2|3]"; "i")'
+
+JQ_QUERY="
+  .[\"coretemp-isa-0000\"] |
+  to_entries |
+  .[] |
+  select(
+    .key |
+    $CORES_TEST
+  ) |
+  .value |
+  to_entries |
+  .[] |
+  select(.key | endswith(\"input\")) |
+  .value
+"
+
+sensors -j | jq "$JQ_QUERY" | jq -s "add / length"
+

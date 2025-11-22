@@ -1,0 +1,11 @@
+#!/bin/bash
+
+PACKAGE_INSTALL_LOCATION='/tmp/discord.deb'
+
+wget "https://discord.com/api/download?platform=linux&format=deb" -O $PACKAGE_INSTALL_LOCATION
+# make sure apt user can read the .deb file
+sudo chown -Rv _apt:$USER $PACKAGE_INSTALL_LOCATION
+sudo chmod 700 _apt:$USER $PACKAGE_INSTALL_LOCATION
+sudo apt install $PACKAGE_INSTALL_LOCATION
+
+sudo rm $PACKAGE_INSTALL_LOCATION

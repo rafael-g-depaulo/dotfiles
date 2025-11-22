@@ -1,0 +1,14 @@
+#!/bin/bash
+
+NNN_AUTO_PLUGS="-P p"
+
+KITTY_PID=$(ps l -C kitty | tail -n 1 | awk '{ print $3 }')
+
+DIR_TO_OPEN=$(realpath "${1:-.}")
+
+kitten @ launch \
+  --copy-env --env nnn_fifo='/tmp/nnn.fifo' --env nnn_plug='c:fcd;d:dragd;f:finder;o:fzopen;p:preview-tui;j:jump;i:imgview' --env nnn_pager="batcat --style=changes --decorations=always --color=always" \
+  --type=window --location=vsplit --color="background=#000" \
+  --to="unix:/tmp/kitty" \
+  nnn "$NNN_AUTO_PLUGS" \
+  "$DIR_TO_OPEN" >/dev/null &

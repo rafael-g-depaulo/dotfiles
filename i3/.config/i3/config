@@ -46,8 +46,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal --listen-on unix:/tmp/kitty-main
-bindsym $mod+KP_Enter exec i3-sensible-terminal --listen-on unix:/tmp/kitty-main
+bindsym $mod+Return exec kitty # --override --allow_remote_control=yes
+bindsym $mod+KP_Enter exec kitty # --listen_on unix:/tmp/kitty-main
 
 # Fix screen
 bindsym $mod+Shift+f exec fixScreen
@@ -286,6 +286,7 @@ bindsym $mod+mod2+KP_6 workspace $spotify
 bindsym $mod+mod2+KP_7 workspace $discord
 bindsym $mod+mod2+KP_8 workspace $ws8
 bindsym $mod+mod2+KP_9 workspace $ws9
+bindsym $mod+mod2+KP_0 workspace $ws10
 
 # make numpad work with moving container to workspace (source: https://github.com/i3/i3/issues/2558#issuecomment-405577744)
 bindsym $mod+Shift+Mod2+KP_End move container to workspace $ws1; workspace $ws1
@@ -297,7 +298,7 @@ bindsym $mod+Shift+Mod2+KP_Right move container to workspace $spotify; workspace
 bindsym $mod+Shift+Mod2+KP_Home move container to workspace $discord; workspace $discord
 bindsym $mod+Shift+Mod2+KP_Up move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+Mod2+KP_Prior move container to workspace $ws9; workspace $ws9
-bindsym $mod+Shift+Mod2+KP_Insert move container to workspace $ws0; workspace $ws0
+bindsym $mod+Shift+Mod2+KP_Insert move container to workspace $ws10; workspace $ws10
 
 # Cmd+Alt+l locks screen
 bindsym $mod+Mod1+l exec i3lock-fancy -g -p

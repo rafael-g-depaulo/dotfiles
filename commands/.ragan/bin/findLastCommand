@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# get last command
+LAST_COMMAND_FULL=$(tail -2 <"${HISTFILE:-/home/$USER/.zsh_history}" | head -1)
+LAST_COMMAND=$(echo "$LAST_COMMAND_FULL" | cut -d';' -f 2 | cut -d' ' -f 1)
+
+CNF_SITE_URL="command-not-found.com/$LAST_COMMAND"
+echo "Trying to find \"$LAST_COMMAND\". Opening $CNF_SITE_URL in browser"
+
+sensible-browser "$CNF_SITE_URL"
